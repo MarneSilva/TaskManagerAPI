@@ -15,10 +15,10 @@ const RootLayout = ({
   children: React.ReactNode;
 }>) => {
   return (
-    <html lang="pt-br">
+    <html lang="pt_br">
       <body className={`bg-slate-100 ${inter.className}`}>{children}</body>
     </html>
   );
-}
+};
 
 export default RootLayout;
