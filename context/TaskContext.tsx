@@ -1,7 +1,8 @@
 "use client";
 
 import React, {createContext, useState} from 'react';
-export enum Stage {
+
+export enum Stage{
     Backlog,
     ToDo,
     Doing,
@@ -9,7 +10,7 @@ export enum Stage {
 }
 
 export type Task = {
-    description: string
+    description: string;
     stage: Stage
 }
 
@@ -39,7 +40,7 @@ export const TaskContextProvider = ({ children } : {children: React.ReactNode;})
 
     const changeStage = (taskIndex:number, new_stage:Stage) => {
         tasks[taskIndex].stage = new_stage;
-    }
+    };
 
     return (
         <TaskContext.Provider value={{ tasks, addTask, removeTask, changeStage }}>
