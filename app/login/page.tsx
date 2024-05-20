@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form"
 import { useContext } from "react"
 const Login = async ({}) => {
     const {register, handleSubmit} = useForm<SignIdData>()
-    const { login, resultado } = useContext(AuthContext)
+    const { login, authError} = useContext(AuthContext)
     const handleLogin = async (data : SignIdData) => { 
         await login(data)
     }
@@ -23,14 +23,13 @@ const Login = async ({}) => {
                 <label htmlFor="password">Senha: </label>
                 <input 
                     {...register('password')} 
-                    type="text" 
+                    type="text"
                     id='password' 
                     name="password" 
                     placeholder="password"
                 />
                 <input type="submit" value="Acessar" />
             </form>
-            <p>{resultado}</p>
         </div>
     )
 }
